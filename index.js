@@ -1,14 +1,17 @@
 const express=require('express');
 
 const app=express();
-
 const PORT=process.env.PORT || 3000;
 
+app.set('view engine', 'ejs');
+
+
+
 app.get('/',function(req,res){
-    res.send("<h1>Hello there</h1>")
+    res.render('pages/index');
 })
 app.get('/about',function(req,res){
-    res.send("<h1>About Page here</h1>")
+    res.render('pages/about');
 })
 
 
