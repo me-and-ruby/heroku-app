@@ -12,8 +12,49 @@
     <main>
         <div class="jumbotron">
             <div class="container">
-            <h1>This is Home page</h1>
-            <p>Welcome to my node home page</p>
+            <h1 class="text-center">My Todos</h1>
+            <div class="card">
+                <div class="card-header bg-dark">
+
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form class="form" method="post" action="/">
+                                <div class="form-group">
+                                    <label class="label">Todo</label>
+                                    <input class="form-control" name="name" id='name'>
+                                    
+                                </div>
+                                <button class="btn btn-dark mb-2">add</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                           <table class='table table-dark'>
+                            <thead>
+                                <th>
+                                  <th scope="col">todos</th>
+                                </th>
+                              </thead>
+                              <tbody>
+                                <% if (entries.length) { %>
+                                    <% entries.forEach(function(entry) { %>
+                                <tr scope="row">
+                                    <%= entry.name %>
+                                </tr>
+                                    <% }) %>
+                                   <% } else { %>
+                                   
+                                   <% } %>
+            
+                                     
+                                </tbody>
+
+                           </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </main>
